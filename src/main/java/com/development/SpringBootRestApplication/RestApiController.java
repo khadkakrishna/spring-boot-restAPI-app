@@ -13,15 +13,8 @@ import java.util.Optional;
 public class RestApiController {
     private final CoffeeRepository coffeeRepository;
 
-    public RestApiController( CoffeeRepository coffeeRepository ) {
+    public RestApiController(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
-        this.coffeeRepository.saveAll(List.of(
-                new Coffee("Café Cereza"),
-                new Coffee("Café Ganador"),
-                new Coffee("Café Lareño"),
-                new Coffee("Café Três Pontas")
-        ));
-
     }
 
     @GetMapping
