@@ -36,10 +36,10 @@ public class RestApiController {
     ResponseEntity<Coffee> putCoffee(@PathVariable String id,
                                      @RequestBody Coffee coffee) {
 
-        return (!coffeeRepository.existsById(id))
+        return (coffeeRepository.existsById(id))
                 ? new ResponseEntity<>(coffeeRepository.save(coffee),
-                HttpStatus.CREATED)
-                : new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.OK);
+                HttpStatus.OK)
+                : new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
